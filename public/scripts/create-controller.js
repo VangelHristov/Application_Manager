@@ -11,15 +11,14 @@ angular
           $scope.emailPattern = constants.emailPattern;
           $scope.filterName = "";
 
-          $scope.save = () => {
-              dbContext
-                .postApplication($scope.application)
-                .then(() => {
-                    toastr.success("Application was saved.");
-                    $state.go("allApplications");
-                })
-                .catch(err => toastr.error(err));
-          };
+          $scope.save = () =>
+            dbContext
+              .postApplication($scope.application)
+              .then(() => {
+                  toastr.success("Application was saved.");
+                  $state.go("allApplications");
+              })
+              .catch(err => toastr.error(err));
 
           $scope.cancel = () => $state.go("allApplications");
       }]);

@@ -3,7 +3,13 @@
         <div class="form-group row">
             <label for="name" class="col-4 col-form-label">*Name</label>
             <div class="col-8">
-                <input class="form-control" id="name" type="text" ng-model="application.name" ng-required="true">
+                <input class="form-control" id="name" type="text" ng-model="application.name" ng-required="true"
+                       ng-minlength="2" ng-maxlength="100">
+                <div ng-messages="updateForm.name.$error" role="alert" ng-messages-multiple>
+                    <div ng-message="required" class="error">Name is required</div>
+                    <div ng-message="minlength" class="error">Min. 2 Characters</div>
+                    <div ng-message="maxlength" class="error">Max. 100 Characters</div>
+                </div>
             </div>
         </div>
 

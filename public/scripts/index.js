@@ -3,7 +3,7 @@
 angular
   .module(
     "applicationManager",
-    ["ui.router", "ngResource", "ngAnimate", "toastr", "ngDialog"]
+    ["ui.router", "ngResource", "ngAnimate", "toastr", "ngDialog", "ngMessages"]
   )
   .config(function ($stateProvider, $urlRouterProvider) {
       $stateProvider

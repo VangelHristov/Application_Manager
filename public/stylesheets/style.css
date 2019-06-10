@@ -24,14 +24,15 @@ main {
     padding: 20px;
 }
 
-.margin-bottom-20{
-    margin-bottom: 20px!important;
+.margin-bottom-20 {
+    margin-bottom: 20px !important;
 }
 
 .dialog .dialog-header {
     border-bottom: none;
     position: relative;
 }
+
 .dialog .dialog-header .btn {
     position: absolute;
     top: 0;
@@ -40,13 +41,34 @@ main {
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
 }
+
 .dialog .dialog-footer {
     border-top: none;
     padding: 0;
 }
+
 .dialog .dialog-footer .btn-group > .btn:first-child {
     border-bottom-left-radius: 0;
 }
+
 .dialog .dialog-footer .btn-group > .btn:last-child {
     border-top-right-radius: 0;
+}
+
+input[type=text].ng-invalid,
+input[type=email].ng-invalid,
+input[type=number].ng-invalid,
+textarea.ng-invalid {
+    border-left: solid 3px #900;
+}
+
+input[type=text].ng-valid,
+input[type=email].ng-valid,
+input[type=number].ng-invalid,
+textarea.ng-valid {
+    border-left: solid 3px #090;
+}
+
+[disabled=disabled] {
+    cursor: not-allowed;
 }

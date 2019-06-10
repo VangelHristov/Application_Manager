@@ -1,17 +1,19 @@
 <main>
-    {{createForm.name | json}}
-    <form ng-submit="save()" name="createForm">
+    <form ng-submit="save()" name="createForm" novalidate>
         <div class="form-group row">
             <label for="name" class="col-4 col-form-label">*Name</label>
             <div class="col-8">
-                <input class="form-control" id="name" type="text" ng-model="application.name" ng-required="true">
+                <input class="form-control" id="name" type="text" ng-model="application.name" ng-required="true"
+                       ng-minlength="2" ng-maxlength="100">
+                <div ng-messages="createForm.name.$error" role="alert" ng-messages-multiple>
+                    <div ng-message="required" class="error">Name is required</div>
+                    <div ng-message="minlength" class="error">Min. 2 Characters</div>
+                    <div ng-message="maxlength" class="error">Max. 100 Characters</div>
+                </div>
             </div>
-            <div class="error-container" ng-show="createForm.name.$dirty && createForm.name.$invalid">
-                <small class="text-danger" ng-show="createForm.name.$error.required">
-                    Name is required.
-                </small>
-            </div>
+
         </div>
+
 
         <div class="form-group row">
             <label for="email" class="col-4 col-form-label">*Email</label>
@@ -19,14 +21,11 @@
                 <input type="email" id="email" ng-model="application.email" ng-required="true"
                        class="form-control" ng-pattern="emailPattern">
             </div>
-            <div class="error-container" ng-show="createForm.email.$dirty && createForm.email.$invalid">
-                <small class="text-danger" ng-show="createForm.email.$error.required">
-                    Email is required.
-                </small>
-                <small class="text-danger" ng-show="createForm.email.$error.pattern">
-                    Email is invalid.
-                </small>
-            </div>
+
+            <span ng-messages="createForm.email.$error" ng-if="createForm.email.$dirty" role="alert">
+                <span ng-message="required" class="error">Email is required</span>
+                <span ng-message="pattern" class="error">Enter valid email address</span>
+            </span>
         </div>
 
         <div class="form-group row">
