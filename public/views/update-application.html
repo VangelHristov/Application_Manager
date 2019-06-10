@@ -1,0 +1,103 @@
+<main>
+    <form ng-submit="save()" name="updateForm">
+        <div class="form-group row">
+            <label for="name" class="col-4 col-form-label">*Name</label>
+            <div class="col-8">
+                <input class="form-control" id="name" type="text" ng-model="application.name" ng-required="true">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email" class="col-4 col-form-label">*Email</label>
+            <div class="col-8">
+                <input type="email" id="email" ng-model="application.email" ng-required="true"
+                       ng-pattern="emailPattern" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="age" class="col-4 col-form-label">*Age</label>
+            <div class="col-8">
+                <input class="form-control" type="number" id="age" ng-model="application.age" ng-required="true"
+                       min="16" max="100" step="1">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="phone" class="col-4 col-form-label">*Phone Number</label>
+            <div class="col-8">
+                <input class="form-control" id="phone" type="text" ng-model="application.phone" ng-required="true"
+                       ng-pattern="phonePattern">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-4 col-form-label">*Preferred Way Of Communication</label>
+            <div class="col-8">
+                <label class="radio-inline">
+                    <input name="preferredWayOfCommunication"
+                           ng-model="application.preferredWayOfCommunication" type="radio" value="Phone">
+                    Phone
+                </label>
+                <label class="radio-inline">
+                    <input name="preferredWayOfCommunication" ng-model="application.preferredWayOfCommunication"
+                           type="radio" value="Email">Email
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="english-level" class="col-4 col-form-label">*English Level</label>
+            <select id="english-level" ng-model="application.englishLevel" class="form-control col-8"
+                    ng-required="true">
+                <option value="">Please select</option>
+                <option value="Fluent">Fluent</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Beginner">Beginner</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label for="available-to-start" class="col-4 col-form-label">*Available To Start</label>
+            <div class="col-8">
+                <input class="form-control" id="available-to-start" type="date" ng-model="application.availableToStart"
+                       ng-required="true">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="technicalSkills" class="col-4 col-form-label">Technical Skills</label>
+            <div class="col-8">
+                <textarea class="form-control" id="technicalSkills" rows="5"
+                          ng-model="application.technicalSkills"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="shortPersonalPresentation" class="col-4 col-form-label">Short Personal Presentation</label>
+            <div class="col-8">
+                <textarea class="form-control" id="shortPersonalPresentation" rows="5"
+                          ng-model="application.shortPersonalPresentation"></textarea>
+            </div>
+        </div>
+
+        <div class="form-check form-check-inline">
+
+            <label class="form-check-label" for="study-from-home">
+                <input class="form-check-input" type="checkbox" id="study-from-home" value="true"
+                       ng-model="application.studyFromHome"> Study From Home
+            </label>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-4"></div>
+            <div class="btn-group btn-group col-8" role="group">
+                <button type="submit" class="btn btn-primary" ng-disabled="updateForm.$invalid">Submit</button>
+                <button type="button" class="btn btn-secondary" ng-click="cancel()">Cancel</button>
+                <button type="button" class="btn btn-danger" ng-click="openConfirmDialog ()">Delete</button>
+            </div>
+        </div>
+    </form>
+</main>

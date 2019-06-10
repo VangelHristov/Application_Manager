@@ -1,0 +1,52 @@
+section {
+    margin-top: 20px;
+}
+
+h2 a {
+    color: black;
+}
+
+h2 a:hover {
+    color: black;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+body {
+    text-align: center;
+    background-color: #a9d7d1;
+    font-family: "Raleway", Helvetica, sans-serif;
+}
+
+main {
+    background-color: white;
+    font-size: 14px;
+    margin: 2% 10%;
+    padding: 20px;
+}
+
+.margin-bottom-20{
+    margin-bottom: 20px!important;
+}
+
+.dialog .dialog-header {
+    border-bottom: none;
+    position: relative;
+}
+.dialog .dialog-header .btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.dialog .dialog-footer {
+    border-top: none;
+    padding: 0;
+}
+.dialog .dialog-footer .btn-group > .btn:first-child {
+    border-bottom-left-radius: 0;
+}
+.dialog .dialog-footer .btn-group > .btn:last-child {
+    border-top-right-radius: 0;
+}

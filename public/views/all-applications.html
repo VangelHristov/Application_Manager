@@ -1,0 +1,16 @@
+<main class="container">
+    <input type="text" ng-model="filterName" class="form-control margin-bottom-20" placeholder="Filter applications by name">
+    <button type="button" class="btn btn-lg btn-secondary btn-block" ng-click="create()">Create new application</button>
+    <section class="card" ng-repeat="application in applications | filter: filterName">
+        <h2 class="card-header text-center"><a ui-sref="applicationDetails({id:application._id})">{{application.name}}</a></h2>
+
+        <div class="card-body">
+            <div class="row text-center">
+                <span class="col-lg-3">Age: {{application.age}}</span>
+                <span class="col-lg-3">English: {{application.englishLevel}}</span>
+                <span class="col-lg-3"> <i class="fas fa-envelope"></i> {{application.email}}</span>
+                <span class="col-lg-3"><i class="fas fa-phone"></i> {{application.phone}}</span>
+            </div>
+        </div>
+    </section>
+</main>
